@@ -28,7 +28,7 @@ const initialState = {
 } as MonitorState;
 
 export const fetchMonitor = createAsyncThunk(
-    'motherboard/fetchList',
+    'monitor/fetchList',
     async () => {
         const response = await fetch(API_HARDWARE.MONITOR);
 

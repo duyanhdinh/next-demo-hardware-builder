@@ -33,7 +33,7 @@ export default function Ram() {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchRam());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

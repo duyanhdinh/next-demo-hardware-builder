@@ -85,7 +85,7 @@ export default function HomePage() {
         dispatch(getLocalMotherboard());
         dispatch(getLocalRam());
         dispatch(getLocalMonitor());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

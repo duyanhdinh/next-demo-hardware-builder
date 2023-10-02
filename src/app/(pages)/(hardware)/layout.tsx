@@ -13,7 +13,7 @@ export default function HardwareLayout({children} : {children: React.ReactNode})
         dispatch(getLocalMotherboard());
         dispatch(getLocalRam());
         dispatch(getLocalMonitor());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>{children}</>

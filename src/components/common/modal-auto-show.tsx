@@ -7,7 +7,7 @@ export default function ModalAutoShow({content, modalId}: ModalType) {
     useEffect(() => {
         const modal= document.getElementById(modalId) as HTMLDialogElement;
         modal.showModal();
-    }, []);
+    }, [modalId]);
 
     return (
         <Modal content={content} modalId={modalId} />

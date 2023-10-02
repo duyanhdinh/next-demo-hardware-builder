@@ -28,7 +28,7 @@ const initialState = {
 } as RamState;
 
 export const fetchRam = createAsyncThunk(
-    'motherboard/fetchList',
+    'ram/fetchList',
     async () => {
         const response = await fetch(API_HARDWARE.RAM);
 

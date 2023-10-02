@@ -32,7 +32,7 @@ export default function Motherboard() {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchMotherboard());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

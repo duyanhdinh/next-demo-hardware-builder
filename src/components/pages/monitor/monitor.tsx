@@ -33,7 +33,7 @@ export default function Monitor() {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchMonitor());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>
