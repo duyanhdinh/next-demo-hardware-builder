@@ -1,0 +1,5 @@
+export const HARDWARE_STORE = {
+    MOTHERBOARD: 'MOTHERBOARD',
+    RAM: 'RAM',
+    MONITOR: 'MONITOR',
+}
