@@ -3,6 +3,10 @@
 - Is a web look like https://pcbuilder.net/list/
 - Create by Next.js 13 (use App Router), Typescript, Redux-Toolkit, TailwindCss (with DaisyUI).
 
+## Demo
+
+[https://next-demo-hardware-builder.vercel.app/](https://next-demo-hardware-builder.vercel.app/)
+
 
 
 ## Getting Started
