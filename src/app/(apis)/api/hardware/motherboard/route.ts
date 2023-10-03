@@ -97,8 +97,8 @@ const data: MotherboardData[] = [
             max_memory_gb: 512
         }
     },
-]
+];
 
-export async function GET() {
-    return Response.json(data)
+export async function GET () {
+    return Response.json(data);
 }

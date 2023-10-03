@@ -10,9 +10,9 @@ const content = (
 
 const modalId = 'modal_ram';
 
-export default function Page() {
+export default function Page () {
 
     return (
         <ModalAutoShow content={content} modalId={modalId} />
-    )
+    );
 }

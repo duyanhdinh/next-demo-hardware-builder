@@ -25,8 +25,8 @@ const MotherboardRow = (): React.ReactNode => {
             info={info}
             removeHandle={() => dispatch(removeMotherboard())}
         />
-    )
-}
+    );
+};
 
 const RamRow = (): React.ReactNode => {
     const data = useAppSelector((state) => state.rams.value);
@@ -42,8 +42,8 @@ const RamRow = (): React.ReactNode => {
             info={info}
             removeHandle={() => dispatch(removeRam())}
         />
-    )
-}
+    );
+};
 
 const MonitorRow = (): React.ReactNode => {
     const data = useAppSelector((state) => state.monitors.value);
@@ -59,17 +59,17 @@ const MonitorRow = (): React.ReactNode => {
             info={info}
             removeHandle={() => dispatch(removeMonitor())}
         />
-    )
-}
+    );
+};
 const BuilderTableRows = (): React.ReactNode => (
     <>
         <MotherboardRow />
         <RamRow />
         <MonitorRow />
     </>
-)
+);
 
-export default function HomePage() {
+export default function HomePage () {
     const rows = BuilderTableRows();
     const motherboard = useAppSelector((state) => state.motherboards.value);
     const ram = useAppSelector((state) => state.rams.value);
@@ -78,7 +78,7 @@ export default function HomePage() {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        setTotal((motherboard.price ?? 0) + (ram.price ?? 0) + (monitor.price ?? 0))
+        setTotal((motherboard.price ?? 0) + (ram.price ?? 0) + (monitor.price ?? 0));
     }, [motherboard, ram, monitor]);
 
     useEffect(() => {
@@ -92,5 +92,5 @@ export default function HomePage() {
             <div className="w-full font-bold text-center text-[18px] mb-[12px] uppercase">Build your Computer</div>
             <BuilderTable rows={rows} grandTotal={total}/>
         </>
-    )
+    );
 }

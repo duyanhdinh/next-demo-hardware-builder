@@ -31,36 +31,41 @@ export const fetchMotherboard = createAsyncThunk(
     async () => {
         const response = await fetch(API_HARDWARE.MOTHERBOARD);
 
-        return (await response.json()) as MotherboardData[]
+        return (await response.json()) as MotherboardData[];
     }
-)
+);
 
 export const motherboardSlice = createSlice({
     name: 'motherboard',
     initialState,
     reducers: {
         pickMotherboard: (state, action: PayloadAction<string>) => {
-            state.value = state.list.find(item => item.id === action.payload)!
+            state.value = state.list.find(item => item.id === action.payload)!;
         },
         removeMotherboard: (state) => {
-            state.value = {} as MotherboardData
+            state.value = {} as MotherboardData;
         },
         storeLocalMotherboard: (state) => {
-            localStorage.setItem(HARDWARE_STORE.MOTHERBOARD, JSON.stringify(state.value))
+            localStorage.setItem(HARDWARE_STORE.MOTHERBOARD, JSON.stringify(state.value));
         },
         getLocalMotherboard: (state) => {
             if (localStorage.getItem(HARDWARE_STORE.MOTHERBOARD) !== null) {
-                state.value = JSON.parse(localStorage.getItem(HARDWARE_STORE.MOTHERBOARD)!)
+                state.value = JSON.parse(localStorage.getItem(HARDWARE_STORE.MOTHERBOARD)!);
             }
         }
     },
     extraReducers: builder => {
         builder.addCase(fetchMotherboard.fulfilled, (state, {payload}) => {
-            state.list = payload
-        })
+            state.list = payload;
+        });
     }
-})
+});
 
-export const {pickMotherboard, removeMotherboard, storeLocalMotherboard, getLocalMotherboard} = motherboardSlice.actions
+export const {
+    pickMotherboard,
+    removeMotherboard,
+    storeLocalMotherboard,
+    getLocalMotherboard
+} = motherboardSlice.actions;
 
-export default motherboardSlice.reducer
+export default motherboardSlice.reducer;

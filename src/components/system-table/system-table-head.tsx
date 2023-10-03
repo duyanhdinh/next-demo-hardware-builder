@@ -1,4 +1,4 @@
-export default function SystemTableHead() {
+export default function SystemTableHead () {
     return (
         <div className="w-full h-[40px] bg-gray-800 hidden lg:flex text-white font-bold">
             <div className="w-1/8 pl-2 flex justify-start items-center"><span>Product</span></div>
@@ -7,5 +7,5 @@ export default function SystemTableHead() {
             <div className="w-1/12 pl-2 flex justify-center items-center"><span>Link</span></div>
             <div className="w-1/12 pl-2 flex justify-center items-center"><span>Picked</span></div>
         </div>
-    )
+    );
 }

@@ -52,8 +52,8 @@ const data: RamData[] = [
             cas: 'CL40',
         }
     },
-]
+];
 
-export async function GET() {
-    return Response.json(data)
+export async function GET () {
+    return Response.json(data);
 }

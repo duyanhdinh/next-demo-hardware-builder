@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PlusIcon from "@components/icon/plus";
-import Image from 'next/image'
+import Image from 'next/image';
 import StoreIcon from "@components/icon/store";
 import TrashIcon from "@components/icon/trash";
 import {SystemData} from "@components/system-table/system-table-row";
@@ -36,7 +36,7 @@ const RowDefault = ({name, href}: BuilderTableRowDefaultType) => (
             </Link>
         </div>
     </div>
-)
+);
 
 const RowData = ({name, data, info, removeHandle}: BuilderTableRowType) => {
     return (
@@ -80,10 +80,10 @@ const RowData = ({name, data, info, removeHandle}: BuilderTableRowType) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default function BuilderTableRow({name, href, data, info, removeHandle}: BuilderTableRowType) {
+export default function BuilderTableRow ({name, href, data, info, removeHandle}: BuilderTableRowType) {
     return (
         <>
             {
@@ -91,5 +91,5 @@ export default function BuilderTableRow({name, href, data, info, removeHandle}: 
                     : <RowData name={name} href={href} data={data} info={info} removeHandle={removeHandle}/>
             }
         </>
-    )
+    );
 }

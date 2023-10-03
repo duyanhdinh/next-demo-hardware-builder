@@ -8,11 +8,11 @@ export type ModalType = {
     modalId: string
 }
 
-export default function Modal({content, modalId}: ModalType) {
+export default function Modal ({content, modalId}: ModalType) {
     const router = useRouter();
     const onDismiss = () => {
-        router.back()
-    }
+        router.back();
+    };
 
     return (
         <dialog id={modalId} className="modal">
@@ -24,5 +24,5 @@ export default function Modal({content, modalId}: ModalType) {
                 <button>close</button>
             </form>
         </dialog>
-    )
+    );
 }

@@ -5,7 +5,7 @@ type NavLinkProp = {
     title: string
 }
 
-export function NavLink({href, title} : NavLinkProp) {
+export function NavLink ({href, title} : NavLinkProp) {
     return (
         <Link href={href}>
             <div className="w-[120px] h-full border-l border-r border-gray-500 flex justify-center items-center capitalize hover:bg-gray-700">
@@ -15,5 +15,5 @@ export function NavLink({href, title} : NavLinkProp) {
         </Link>
 
 
-    )
+    );
 }

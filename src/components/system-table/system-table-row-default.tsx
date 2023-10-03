@@ -2,7 +2,7 @@ import StoreIcon from "@components/icon/store";
 import PlusIcon from "@components/icon/plus";
 import React from "react";
 
-export default function SystemTableRowDefault() {
+export default function SystemTableRowDefault () {
     return (
         <div className="animate-pulse w-full h-auto lg:h-[160px] flex flex-wrap justify-start leading-loose lg:leading-normal px-2 lg:p-0 text-black bg-white">
             <div className="w-full lg:hidden lg:pl-2 flex justify-start items-center font-bold capitalize">
@@ -57,5 +57,5 @@ export default function SystemTableRowDefault() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

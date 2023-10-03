@@ -3,8 +3,8 @@
 import React from "react";
 import Monitor from "@components/pages/monitor/monitor";
 
-export default function Page() {
+export default function Page () {
     return (
         <Monitor />
-    )
+    );
 }

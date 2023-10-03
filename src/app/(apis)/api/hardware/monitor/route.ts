@@ -52,8 +52,8 @@ const data: MonitorData[] = [
             refresh_rate: 165,
         }
     },
-]
+];
 
-export async function GET() {
-    return Response.json(data)
+export async function GET () {
+    return Response.json(data);
 }

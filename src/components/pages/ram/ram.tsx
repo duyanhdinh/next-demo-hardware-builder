@@ -20,10 +20,10 @@ export const ramInfo = ({info}: RamData) => {
                 <div className="w-full lg:w-1/3 text-left lg:text-right"><span className="font-semibold">CAS Latency:</span> {info.cas}</div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default function Ram() {
+export default function Ram () {
     const rams = useAppSelector((state) => state.rams.list);
     const pickedId = useAppSelector((state) => state.rams.value.id);
     const dispatch = useAppDispatch();
@@ -41,5 +41,5 @@ export default function Ram() {
                 changeCallback: (id) => dispatch(pickRam(id))
             })} />
         </>
-    )
+    );
 }

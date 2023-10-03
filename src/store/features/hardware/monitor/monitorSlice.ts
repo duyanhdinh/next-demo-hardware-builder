@@ -32,9 +32,9 @@ export const fetchMonitor = createAsyncThunk(
     async () => {
         const response = await fetch(API_HARDWARE.MONITOR);
 
-        return (await response.json()) as MonitorData[]
+        return (await response.json()) as MonitorData[];
     }
-)
+);
 
 
 export const monitorSlice = createSlice({
@@ -42,27 +42,27 @@ export const monitorSlice = createSlice({
     initialState,
     reducers: {
         pickMonitor: (state, action: PayloadAction<string>) => {
-            state.value = state.list.find(item => item.id === action.payload)!
+            state.value = state.list.find(item => item.id === action.payload)!;
         },
         removeMonitor: (state) => {
-            state.value = {} as MonitorData
+            state.value = {} as MonitorData;
         },
         storeLocalMonitor: (state) => {
-            localStorage.setItem(HARDWARE_STORE.MONITOR, JSON.stringify(state.value))
+            localStorage.setItem(HARDWARE_STORE.MONITOR, JSON.stringify(state.value));
         },
         getLocalMonitor: (state) => {
             if (localStorage.getItem(HARDWARE_STORE.MONITOR) !== null) {
-                state.value = JSON.parse(localStorage.getItem(HARDWARE_STORE.MONITOR)!)
+                state.value = JSON.parse(localStorage.getItem(HARDWARE_STORE.MONITOR)!);
             }
         }
     },
     extraReducers: builder => {
         builder.addCase(fetchMonitor.fulfilled, (state, {payload}) => {
-            state.list = payload
-        })
+            state.list = payload;
+        });
     }
-})
+});
 
-export const {pickMonitor, removeMonitor, storeLocalMonitor, getLocalMonitor} = monitorSlice.actions
+export const {pickMonitor, removeMonitor, storeLocalMonitor, getLocalMonitor} = monitorSlice.actions;
 
-export default monitorSlice.reducer
+export default monitorSlice.reducer;

@@ -1,6 +1,6 @@
 import React from "react";
 import PlusIcon from "@components/icon/plus";
-import Image from 'next/image'
+import Image from 'next/image';
 import StoreIcon from "@components/icon/store";
 import CheckIcon from "@components/icon/check";
 import {MotherboardData} from "@store/features/hardware/motherboard/motherboardSlice";
@@ -17,7 +17,7 @@ type SystemTableRowData<T> = {
     changeCallback: (id: string) => void
 }
 
-export function systemTableRows<T extends SystemData>({data, infoCallback, pickedId, changeCallback}: SystemTableRowData<T>): React.ReactNode {
+export function systemTableRows<T extends SystemData> ({data, infoCallback, pickedId, changeCallback}: SystemTableRowData<T>): React.ReactNode {
     const list = data
         .map(item => <SystemTableRow
             key={item.id}
@@ -25,9 +25,9 @@ export function systemTableRows<T extends SystemData>({data, infoCallback, picke
             info={infoCallback(item)}
             pickedId={pickedId}
             changeCallback={changeCallback}
-        />)
+        />);
 
-    return (<>{list}</>)
+    return (<>{list}</>);
 }
 
 type SystemTableRowType = {
@@ -37,7 +37,7 @@ type SystemTableRowType = {
     changeCallback: (id: string) => void
 }
 
-export default function SystemTableRow({data, info, pickedId, changeCallback}: SystemTableRowType) {
+export default function SystemTableRow ({data, info, pickedId, changeCallback}: SystemTableRowType) {
     return (
         <div className="w-full h-auto lg:h-[160px] flex flex-wrap justify-start leading-loose lg:leading-normal px-2 lg:p-0 text-black bg-white">
             <div className="w-full lg:hidden lg:pl-2 flex justify-start items-center font-bold capitalize">
@@ -86,5 +86,5 @@ export default function SystemTableRow({data, info, pickedId, changeCallback}: S
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -12,20 +12,20 @@ export const saveBrowserMiddleware = createListenerMiddleware();
 saveBrowserMiddleware.startListening({
     matcher: isAnyOf(pickMotherboard, removeMotherboard),
     effect: async (_, listenerApi) => {
-        listenerApi.dispatch(storeLocalMotherboard())
+        listenerApi.dispatch(storeLocalMotherboard());
     }
-})
+});
 
 saveBrowserMiddleware.startListening({
     matcher: isAnyOf(pickRam, removeRam),
     effect: async (_, listenerApi) => {
-        listenerApi.dispatch(storeLocalRam())
+        listenerApi.dispatch(storeLocalRam());
     }
-})
+});
 
 saveBrowserMiddleware.startListening({
     matcher: isAnyOf(pickMonitor, removeMonitor),
     effect: async (_, listenerApi) => {
-        listenerApi.dispatch(storeLocalMonitor())
+        listenerApi.dispatch(storeLocalMonitor());
     }
-})
+});

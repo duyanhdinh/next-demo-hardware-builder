@@ -7,7 +7,7 @@ type BuilderTableProps = {
     grandTotal: number
 }
 
-export default function BuilderTable({rows, grandTotal}: BuilderTableProps) {
+export default function BuilderTable ({rows, grandTotal}: BuilderTableProps) {
     return (
         <div className="w-full h-auto px-[12px] lg:px-0">
             <div className="w-full h-auto shadow-2xl text-[14px]">
@@ -21,5 +21,5 @@ export default function BuilderTable({rows, grandTotal}: BuilderTableProps) {
                 }
             </div>
         </div>
-    )
+    );
 }

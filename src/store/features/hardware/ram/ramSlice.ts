@@ -32,9 +32,9 @@ export const fetchRam = createAsyncThunk(
     async () => {
         const response = await fetch(API_HARDWARE.RAM);
 
-        return (await response.json()) as RamData[]
+        return (await response.json()) as RamData[];
     }
-)
+);
 
 
 export const ramSlice = createSlice({
@@ -42,27 +42,27 @@ export const ramSlice = createSlice({
     initialState,
     reducers: {
         pickRam: (state, action: PayloadAction<string>) => {
-            state.value = state.list.find(item => item.id === action.payload)!
+            state.value = state.list.find(item => item.id === action.payload)!;
         },
         removeRam: (state) => {
-            state.value = {} as RamData
+            state.value = {} as RamData;
         },
         storeLocalRam: (state) => {
-            localStorage.setItem(HARDWARE_STORE.RAM, JSON.stringify(state.value))
+            localStorage.setItem(HARDWARE_STORE.RAM, JSON.stringify(state.value));
         },
         getLocalRam: (state) => {
             if (localStorage.getItem(HARDWARE_STORE.RAM) !== null) {
-                state.value = JSON.parse(localStorage.getItem(HARDWARE_STORE.RAM)!)
+                state.value = JSON.parse(localStorage.getItem(HARDWARE_STORE.RAM)!);
             }
         }
     },
     extraReducers: builder => {
         builder.addCase(fetchRam.fulfilled, (state, {payload}) => {
-            state.list = payload
-        })
+            state.list = payload;
+        });
     }
-})
+});
 
-export const {pickRam, removeRam, storeLocalRam, getLocalRam} = ramSlice.actions
+export const {pickRam, removeRam, storeLocalRam, getLocalRam} = ramSlice.actions;
 
-export default ramSlice.reducer
+export default ramSlice.reducer;

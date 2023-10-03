@@ -10,9 +10,9 @@ const content = (
 
 const modalId = 'modal_motherboard';
 
-export default function Page() {
+export default function Page () {
 
     return (
         <ModalAutoShow content={content} modalId={modalId} />
-    )
+    );
 }

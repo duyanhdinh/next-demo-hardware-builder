@@ -1,6 +1,6 @@
 import {Navbar} from "@components/header/navbar";
 
-export function Header() {
+export function Header () {
     return(
         <>
             <div className="w-full h-[100px] bg-gray-800 flex justify-center items-center border-b border-gray-500">
@@ -11,5 +11,5 @@ export function Header() {
             </div>
             <Navbar />
         </>
-    )
+    );
 }

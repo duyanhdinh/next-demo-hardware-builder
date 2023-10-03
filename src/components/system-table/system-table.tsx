@@ -6,7 +6,7 @@ type SystemTableProps = {
     rows: React.ReactNode
 }
 
-export default function SystemTable({rows}: SystemTableProps) {
+export default function SystemTable ({rows}: SystemTableProps) {
     return (
         <div className="w-full h-auto shadow-2xl text-[14px]">
             <SystemTableHead />
@@ -14,13 +14,13 @@ export default function SystemTable({rows}: SystemTableProps) {
                 {
                     !(rows as React.ReactElement).props.children.length &&
                     <>
-                        <SystemTableRowDefault />
-                        <SystemTableRowDefault />
-                        <SystemTableRowDefault />
+                    	<SystemTableRowDefault />
+                    	<SystemTableRowDefault />
+                    	<SystemTableRowDefault />
                     </>
                 }
                 {rows}
             </div>
         </div>
-    )
+    );
 }

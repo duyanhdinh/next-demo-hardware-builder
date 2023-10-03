@@ -6,7 +6,7 @@ import {useAppDispatch} from "@store/hooks";
 import {getLocalRam} from "@store/features/hardware/ram/ramSlice";
 import {getLocalMonitor} from "@store/features/hardware/monitor/monitorSlice";
 
-export default function HardwareLayout({children} : {children: React.ReactNode}) {
+export default function HardwareLayout ({children} : {children: React.ReactNode}) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -17,5 +17,5 @@ export default function HardwareLayout({children} : {children: React.ReactNode})
 
     return (
         <>{children}</>
-    )
+    );
 }

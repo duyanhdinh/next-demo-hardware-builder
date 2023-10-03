@@ -20,10 +20,10 @@ export const monitorInfo = ({info}: MonitorData) => {
                 <div className="w-full lg:w-1/3 text-left lg:text-right"><span className="font-semibold">Refresh Rate:</span> {info.refresh_rate} Hz</div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default function Monitor() {
+export default function Monitor () {
     const monitors = useAppSelector((state) => state.monitors.list);
     const pickedId = useAppSelector((state) => state.monitors.value.id);
     const dispatch = useAppDispatch();
@@ -41,5 +41,5 @@ export default function Monitor() {
                 changeCallback: (id) => dispatch(pickMonitor(id))
             })} />
         </>
-    )
+    );
 }
