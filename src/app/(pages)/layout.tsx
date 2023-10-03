@@ -20,10 +20,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={inter.className}>
+        <head>
+            <link rel="shortcut icon" href="/icon.svg"></link>
+        </head>
+        <body className={`${inter.className} bg-white`}>
         <Header/>
         <StoreProvider>
-            <div className="w-full min-h-screen flex justify-center pt-[16px]">
+            <div className="w-full min-h-body flex justify-center pt-[16px]">
                 <div className="w-[1080px] h-full">{children}</div>
             </div>
             {modal}

@@ -89,6 +89,7 @@ export default function HomePage() {
 
     return (
         <>
+            <div className="w-full font-bold text-center text-[18px] mb-[12px] uppercase">Build your Computer</div>
             <BuilderTable rows={rows} grandTotal={total}/>
         </>
     )

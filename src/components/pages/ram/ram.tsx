@@ -9,19 +9,15 @@ import {
 export const ramInfo = ({info}: RamData) => {
     return (
         <>
-            <div className="w-full flex justify-between">
-                <div><span className="font-semibold">Brand:</span> {info.brand}</div>
-                <div><span className="font-semibold">Model:</span> {info.model}</div>
-            </div>
-            <div className="w-full flex">
-                <div className="w-1/3"><span className="font-semibold">RAM Size:</span> {info.size} GB</div>
-                <div className="w-1/3 text-center"><span className="font-semibold">Quantity:</span> {info.quantity}</div>
-                <div className="w-1/3 text-right"><span className="font-semibold">RAM Type:</span> {info.type}</div>
-            </div>
-            <div className="w-full flex">
-                <div className="w-1/3"><span className="font-semibold">RAM Speed:</span> {info.size} MHz</div>
-                <div className="w-1/3 text-center"><span className="font-semibold">DIMM Type:</span> {info.dimm}</div>
-                <div className="w-1/3 text-right"><span className="font-semibold">CAS Latency:</span> {info.cas}</div>
+            <div className="w-full flex flex-wrap">
+                <div className="w-full lg:w-1/2"><span className="font-semibold">Brand:</span> {info.brand}</div>
+                <div className="w-full lg:w-1/2 text-left lg:text-right"><span className="font-semibold">Model:</span> {info.model}</div>
+                <div className="w-full lg:w-1/3"><span className="font-semibold">RAM Size:</span> {info.size} GB</div>
+                <div className="w-full lg:w-1/3 text-left lg:text-center"><span className="font-semibold">Quantity:</span> {info.quantity}</div>
+                <div className="w-full lg:w-1/3 text-left lg:text-right"><span className="font-semibold">RAM Type:</span> {info.type}</div>
+                <div className="w-full lg:w-1/3"><span className="font-semibold">RAM Speed:</span> {info.size} MHz</div>
+                <div className="w-full lg:w-1/3 text-left lg:text-center"><span className="font-semibold">DIMM Type:</span> {info.dimm}</div>
+                <div className="w-full lg:w-1/3 text-left lg:text-right"><span className="font-semibold">CAS Latency:</span> {info.cas}</div>
             </div>
         </>
     )
