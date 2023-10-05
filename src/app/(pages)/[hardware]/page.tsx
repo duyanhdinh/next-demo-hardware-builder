@@ -8,12 +8,7 @@ import {getLocalRam} from "@store/features/hardware/ram/ramSlice";
 import {getLocalMonitor} from "@store/features/hardware/monitor/monitorSlice";
 import Motherboard from "@components/pages/motherboard/motherboard";
 import Ram from "@components/pages/ram/ram";
-
-const RELEASE_URI_HARDWARE = {
-    MOTHERBOARD: 'motherboard',
-    RAM: 'ram',
-    MONITOR: 'monitor'
-};
+import {RELEASE_URI_HARDWARE} from "@const/dynamic-route/hardware";
 
 const getComponent = (hardware: string): React.ReactNode => {
     switch (hardware) {
@@ -56,5 +51,3 @@ export default function Page({params : { hardware }}: { params: { hardware: stri
         <>{Hardware}</>
     );
 }
-
-export { RELEASE_URI_HARDWARE };

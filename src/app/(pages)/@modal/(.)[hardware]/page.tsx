@@ -5,7 +5,8 @@ import React, {useEffect, useState} from "react";
 import ModalAutoShow from "@components/common/modal-auto-show";
 import Ram from "@components/pages/ram/ram";
 import Monitor from "@components/pages/monitor/monitor";
-import {RELEASE_URI_HARDWARE} from "@/app/(pages)/[hardware]/page";
+import {RELEASE_URI_HARDWARE} from "@const/dynamic-route/hardware";
+
 const getComponent = (hardware: string): React.ReactNode => {
     switch (hardware) {
         case RELEASE_URI_HARDWARE.MOTHERBOARD:
