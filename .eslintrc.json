@@ -5,7 +5,7 @@
   ],
   "rules": {
     "block-spacing": [2, "always"],
-    "indent": ["error", 4, { "SwitchCase": 2 }],
+    "indent": ["error", 4, { "SwitchCase": 1 }],
     "semi": [2, "always"]
   }
 }
