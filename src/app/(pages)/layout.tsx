@@ -3,6 +3,8 @@ import type {Metadata} from 'next';
 import {Inter} from 'next/font/google';
 import {Header} from "@components/header/header";
 import StoreProvider from "@store/provider";
+import Observer from "@components/observer/observer";
+import {Navbar} from "@components/header/navbar";
 
 const inter = Inter({subsets: ['latin']});
 
@@ -26,10 +28,13 @@ export default function RootLayout ({
             <body className={`${inter.className} bg-white`}>
                 <Header/>
                 <StoreProvider>
-                    <div className="w-full min-h-body flex justify-center pt-[16px]">
-                        <div className="w-[1080px] h-full">{children}</div>
-                    </div>
-                    {modal}
+                    <Observer>
+                        <Navbar />
+                        <div className="w-full min-h-body flex justify-center pt-[16px]">
+                            <div className="w-[1080px] h-full">{children}</div>
+                        </div>
+                        {modal}
+                    </Observer>
                 </StoreProvider>
             </body>
         </html>

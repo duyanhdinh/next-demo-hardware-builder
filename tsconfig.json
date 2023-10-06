@@ -23,6 +23,7 @@
       "@components/*": ["./src/components/*"],
       "@store/*": ["./src/store/*"],
       "@const/*": ["./src/constant/*"],
+      "@fire/*": ["./src/utils/firebase/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
