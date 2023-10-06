@@ -74,6 +74,8 @@ export default function HomePage () {
     const motherboard = useAppSelector((state) => state.motherboards.value);
     const ram = useAppSelector((state) => state.rams.value);
     const monitor = useAppSelector((state) => state.monitors.value);
+    const isAuth = useAppSelector((state) => state.auth.isAuth);
+    const user = useAppSelector((state) => state.auth.user);
     const dispatch = useAppDispatch();
     const [total, setTotal] = useState(0);
 
@@ -89,7 +91,9 @@ export default function HomePage () {
 
     return (
         <>
-            <div className="w-full font-bold text-center text-[18px] mb-[12px] uppercase">Build your Computer</div>
+            <div className="w-full font-bold text-center text-[18px] mb-[12px] capitalize">
+                {isAuth ? <>Hi <span className="text-green-500">{user.displayName}</span>, </> : ''}
+                Build your Computer</div>
             <BuilderTable rows={rows} grandTotal={total}/>
         </>
     );
