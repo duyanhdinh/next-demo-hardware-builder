@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import motherboardReducer from "@store/features/hardware/motherboard/motherboardSlice";
 import ramReducer from "@store/features/hardware/ram/ramSlice";
 import monitorReducer from "@store/features/hardware/monitor/monitorSlice";
+import authReducer from "@store/features/auth/authSlice";
 import {saveBrowserMiddleware} from "@store/middleware/saveBrowserMiddleware";
 import {ThunkDispatch} from "redux-thunk";
 import {AnyAction} from "redux";
@@ -11,6 +12,7 @@ export const store = configureStore({
         motherboards: motherboardReducer,
         rams: ramReducer,
         monitors: monitorReducer,
+        auth: authReducer
     },
     middleware: (getDefaultMiddleware) => [
         ...getDefaultMiddleware(),

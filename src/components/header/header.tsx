@@ -1,5 +1,3 @@
-import {Navbar} from "@components/header/navbar";
-
 export function Header () {
     return(
         <>
@@ -9,7 +7,6 @@ export function Header () {
                     <span className="text-green-500 uppercase font-bold">hardware</span> builder
                 </div>
             </div>
-            <Navbar />
         </>
     );
 }
