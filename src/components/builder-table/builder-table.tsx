@@ -2,7 +2,7 @@ import BuilderTableHead from "@components/builder-table/builder-table-head";
 import React from "react";
 import BuilderTableFoot from "@components/builder-table/builder-table-foot";
 
-type BuilderTableProps = {
+export type BuilderTableProps = {
     rows: React.ReactNode,
     grandTotal: number
 }

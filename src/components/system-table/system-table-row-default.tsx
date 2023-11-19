@@ -4,7 +4,7 @@ import React from "react";
 
 export default function SystemTableRowDefault () {
     return (
-        <div className="animate-pulse w-full h-auto lg:h-[160px] flex flex-wrap justify-start leading-loose lg:leading-normal px-2 lg:p-0 text-black bg-white">
+        <div role='system-table-default' className="animate-pulse w-full h-auto lg:h-[160px] flex flex-wrap justify-start leading-loose lg:leading-normal px-2 lg:p-0 text-black bg-white">
             <div className="w-full lg:hidden lg:pl-2 flex justify-start items-center font-bold capitalize">
                 <div className="relative flex items-center py-5 w-full text-[16px]">
                     <span className="mr-4 flex-shrink">#</span>

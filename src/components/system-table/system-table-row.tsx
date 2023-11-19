@@ -77,11 +77,13 @@ export default function SystemTableRow ({data, info, pickedId, changeCallback}: 
                 <div className="w-auto h-auto cursor-pointer">
                     {
                         (pickedId === data.id) ? <CheckIcon width="28px" height="28px" color="#15803d"/>
-                            : <div onClick={() => changeCallback(data.id)}><PlusIcon
-                                width="28px"
-                                height="28px"
-                                color="#b91c1c"
-                            /></div>
+                            : <div
+                                role='pick-new-system'
+                                aria-label={data.id}
+                                onClick={() => changeCallback(data.id)}
+                            >
+                                <PlusIcon width="28px" height="28px" color="#b91c1c"/>
+                            </div>
                     }
                 </div>
             </div>

@@ -24,6 +24,7 @@ export default function SignIn() {
         <>
             <div className="w-full h-full min-h-[40vh] flex flex-col justify-center items-center">
                 <div
+                    role={'sign-in-with-google'}
                     className="px-4 py-2 rounded-lg shadow-2xl border border-gray-500 bg-red-700 cursor-pointer font-semibold text-white mb-4"
                     onClick={loginGoogle}
                 >Sign In with Google</div>

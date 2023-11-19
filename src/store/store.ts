@@ -1,27 +1,30 @@
-import { configureStore } from '@reduxjs/toolkit';
 import motherboardReducer from "@store/features/hardware/motherboard/motherboardSlice";
 import ramReducer from "@store/features/hardware/ram/ramSlice";
 import monitorReducer from "@store/features/hardware/monitor/monitorSlice";
 import authReducer from "@store/features/auth/authSlice";
+import {AnyAction, combineReducers, configureStore, ThunkDispatch} from '@reduxjs/toolkit';
+import type { PreloadedState } from '@reduxjs/toolkit';
 import {saveBrowserMiddleware} from "@store/middleware/saveBrowserMiddleware";
-import {ThunkDispatch} from "redux-thunk";
-import {AnyAction} from "redux";
 
-export const store = configureStore({
-    reducer: {
-        motherboards: motherboardReducer,
-        rams: ramReducer,
-        monitors: monitorReducer,
-        auth: authReducer
-    },
-    middleware: (getDefaultMiddleware) => [
-        ...getDefaultMiddleware(),
-        saveBrowserMiddleware.middleware
-    ]
+const rootReducer = combineReducers({
+    motherboards: motherboardReducer,
+    rams: ramReducer,
+    monitors: monitorReducer,
+    auth: authReducer
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+    return configureStore({
+        reducer: rootReducer,
+        middleware: (getDefaultMiddleware) => [
+            ...getDefaultMiddleware(),
+            saveBrowserMiddleware.middleware
+        ],
+        preloadedState
+    });
+};
+
+export type RootState = ReturnType<typeof rootReducer>
+export type AppStore = ReturnType<typeof setupStore>
+export type AppDispatch = AppStore['dispatch']
 export type AppThunkDispatch = ThunkDispatch<RootState, any, AnyAction>;
