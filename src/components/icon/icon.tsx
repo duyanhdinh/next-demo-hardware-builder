@@ -6,6 +6,7 @@ export type IconType = {
     height?: string,
     stroke?: string,
     strokeWidth?: number,
+    name?: string,
 }
 
 type SvgType = {
@@ -18,10 +19,14 @@ export default function Icon ({
     height = '20px',
     stroke = '#000',
     strokeWidth = 0,
+    name = 'null',
     viewBox, path
 }: IconType & SvgType) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg
+            role='icon'
+            aria-label={name}
+            xmlns="http://www.w3.org/2000/svg"
             viewBox={viewBox}
             fill={color}
             width={width}

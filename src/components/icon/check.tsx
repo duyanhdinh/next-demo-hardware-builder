@@ -12,7 +12,7 @@ export default function CheckIcon ({
     strokeWidth
 }: IconType) {
     return (
-        <Icon path={path} viewBox={viewBox} color={color} stroke={stroke} strokeWidth={strokeWidth} width={width}
+        <Icon name='check' path={path} viewBox={viewBox} color={color} stroke={stroke} strokeWidth={strokeWidth} width={width}
             height={height}/>
     );
 }

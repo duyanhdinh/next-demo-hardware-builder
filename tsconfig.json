@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@pages/*": ["./src/app/(pages)/*"],
       "@components/*": ["./src/components/*"],
       "@store/*": ["./src/store/*"],
       "@const/*": ["./src/constant/*"],

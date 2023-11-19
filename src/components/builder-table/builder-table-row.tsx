@@ -12,14 +12,14 @@ type BuilderTableRowDefaultType = {
     href: string,
 }
 
-type BuilderTableRowType = BuilderTableRowDefaultType & {
+export type BuilderTableRowType = BuilderTableRowDefaultType & {
     data: SystemData,
     info: React.ReactNode,
     removeHandle: () => void
 }
 
 const RowDefault = ({name, href}: BuilderTableRowDefaultType) => (
-    <div className="w-full h-[100px] lg:h-[60px] block lg:flex justify-start text-black bg-white">
+    <div role='add-row-builder' className="w-full h-[100px] lg:h-[60px] block lg:flex justify-start text-black bg-white">
         <div className="w-full lg:w-1/8 lg:pl-2 pr-2 lg:pr-0 flex justify-start items-center font-bold capitalize">
             <span className="hidden lg:block">{name}</span>
             <div className="relative flex lg:hidden items-center py-5 w-full text-[16px]">
@@ -40,7 +40,7 @@ const RowDefault = ({name, href}: BuilderTableRowDefaultType) => (
 
 const RowData = ({name, data, info, removeHandle}: BuilderTableRowType) => {
     return (
-        <div className="w-full h-auto lg:h-[160px] flex flex-wrap leading-loose lg:leading-normal pb-[12px] px-2 lg:p-0 justify-start text-black bg-white text-[16px] lg:text-[14px]">
+        <div role='data-row-builder' className="w-full h-auto lg:h-[160px] flex flex-wrap leading-loose lg:leading-normal pb-[12px] px-2 lg:p-0 justify-start text-black bg-white text-[16px] lg:text-[14px]">
             <div className="w-full lg:w-1/8 lg:pl-2 flex justify-start items-center font-bold capitalize">
                 <span className="hidden lg:block">{name}</span>
                 <div className="relative flex lg:hidden items-center py-5 w-full text-[16px]">
@@ -75,7 +75,7 @@ const RowData = ({name, data, info, removeHandle}: BuilderTableRowType) => {
                 </a>
             </div>
             <div className="w-1/2 lg:w-1/12 flex justify-center items-center">
-                <div className="w-auto h-auto cursor-pointer" onClick={() => removeHandle()}>
+                <div role='remove-builder-row' className="w-auto h-auto cursor-pointer" onClick={() => removeHandle()}>
                     <TrashIcon width="28px" height="28px" color="#b91c1c" />
                 </div>
             </div>
